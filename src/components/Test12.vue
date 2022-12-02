@@ -14,7 +14,7 @@ import {
     onBeforeUpdate,
     onUpdated,
     onBeforeUnmount,
-    onUnmounted
+    onUnmounted,
     ref
 } from 'vue'
 export default {
