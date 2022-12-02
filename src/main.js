@@ -5,6 +5,7 @@ import createStore from './store/index'
 import router from './router/index.js'
 
 import 'vue-cesium/dist/index.css'
+import './assets/style/normalize.css'
 
 // import './assets/main.css'
 
