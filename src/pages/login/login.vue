@@ -1,11 +1,11 @@
 <template lang="">
-    <div class="login-area">
-        <div class="login-box">
-            <el-input v-model="user" placeholder="用户名" />
-            <el-input v-model="password" placeholder="密码" />
-            <el-button type="primary">登录</el-button>
-        </div>
+  <div class="login-area">
+    <div class="login-box">
+      <el-input v-model="user" placeholder="用户名" />
+      <el-input v-model="password" placeholder="密码" />
+      <el-button type="primary">登录</el-button>
     </div>
+  </div>
 </template>
 <script setup>
 import { ref } from 'vue'
@@ -28,5 +28,5 @@ const password = ref('')
         border:1px solid red;
     }
 }
-    
+
 </style>
