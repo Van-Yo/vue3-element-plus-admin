@@ -12,7 +12,7 @@ import { ref } from 'vue'
 const user = ref('')
 const password = ref('')
 </script>
-<style>
+<style lang="scss">
 .login-area{
     width:100vw;
     height:100vh;
@@ -22,10 +22,11 @@ const password = ref('')
     align-items:center;
     background:url('../../static/banner-default.jpg');
     background-size:100% 100%;
-}
     .login-box{
         width:500px;
         height:400px;
         border:1px solid red;
     }
+}
+    
 </style>
