@@ -1,14 +1,14 @@
-import { Get } from '../plugins/axios'
+import { Post } from '../plugins/axios'
 
-export function getUserInfo () {
-  return Get('/api/001')
+export function login (data) {
+  return Post('/api/login', data)
 }
 
-export function loginOut () {
-  return Get('/api/loginOut')
+export function loginOut (data) {
+  return Post('/api/loginOut', data)
 }
 
 export const userApi = {
-  getUserInfo,
+  login,
   loginOut
 }

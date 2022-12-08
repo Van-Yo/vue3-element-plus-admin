@@ -1,6 +1,6 @@
 import { ElMessage } from 'element-plus'
 export const handleChangeRequestHeader = (config) => {
-  config.baseURL = 'https://www.fastmock.site/mock/5897df5b6cb3349c82995e9eaca16362/_mock-01'
+  config.baseURL = import.meta.env.VITE_APP_API
   return config
 }
 

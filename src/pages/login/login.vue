@@ -20,9 +20,12 @@ const changeMode = () => {
   mode.value = !mode.value
 }
 const login = async () => {
-  const [e, r] = await api.getUserInfo()
+  const [e, r] = await api.login({
+    user: user.value,
+    password: password.value
+  })
   if (!e && r) {
-    ElMessage.success('登录成功')
+    r.res === '000' && ElMessage.success('登录成功')
   }
 }
 const register = () => {
