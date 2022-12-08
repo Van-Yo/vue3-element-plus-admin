@@ -11,14 +11,19 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+import { api } from '../../api'
+import { ElMessage } from 'element-plus'
 const user = ref('')
 const password = ref('')
 const mode = ref(true)
 const changeMode = () => {
   mode.value = !mode.value
 }
-const login = () => {
-  console.log(user.value, password.value)
+const login = async () => {
+  const [e, r] = await api.getUserInfo()
+  if (!e && r) {
+    ElMessage.success('登录成功')
+  }
 }
 const register = () => {
   console.log(user.value, password.value)

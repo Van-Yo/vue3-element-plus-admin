@@ -27,3 +27,15 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Axios
+```js
+const login = async () => {
+  const [e, r] = await api.getUserInfo()
+  if (!e && r) {
+    // success
+  }else{
+    // error
+  }
+}
+```
