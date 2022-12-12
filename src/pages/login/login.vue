@@ -11,25 +11,26 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import { api } from '../../api'
-import { ElMessage } from 'element-plus'
+
+import { useStore } from 'vuex'
 const user = ref('')
 const password = ref('')
 const mode = ref(true)
 const changeMode = () => {
   mode.value = !mode.value
 }
-const login = async () => {
-  const [e, r] = await api.login({
-    user: user.value,
-    password: password.value
-  })
-  if (!e && r) {
-    r.res === '000' && ElMessage.success('登录成功')
-  }
-}
 const register = () => {
   console.log(user.value, password.value)
+}
+const store = useStore()
+
+const login = async () => {
+  // 异步调用:dispatch
+  const data = {
+    user: user.value,
+    password: password.value
+  }
+  store.dispatch('login', data)
 }
 </script>
 <style lang="scss">
