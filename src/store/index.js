@@ -20,15 +20,17 @@ export default createStore({
   actions: {
     login (store, data) {
       // eslint-disable-next-line no-async-promise-executor
-      return new Promise(async () => {
+      return new Promise(async (resolve) => {
         const [e, r] = await api.login(data)
         if (!e && r) {
           const token = r.data.token
           store.commit('setToken', token)
           setToken(token)
-          ElMessage.success('登录成功')
+          // ElMessage.success('登录成功')
+          resolve([null, r])
         } else {
           ElMessage.error('登录失败')
+          resolve([e, undefined])
         }
       })
     }
