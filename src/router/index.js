@@ -12,8 +12,20 @@ const routes = [
   },
   {
     path: '/index',
-    name: 'index',
-    component: () => import(/* webpackChunkName:'index' */ '@/pages/index/index.vue')
+    name: 'layout',
+    component: () => import(/* webpackChunkName:'layout' */ '@/pages/layout/index.vue'),
+    children: [
+      {
+        path: '/home',
+        name: 'home',
+        component: () => import(/* webpackChunkName:'home' */ '@/pages/index/index.vue')
+      },
+      {
+        path: '/person',
+        name: 'person',
+        component: () => import(/* webpackChunkName:'person' */ '@/pages/person/index.vue')
+      }
+    ]
   }
 ]
 

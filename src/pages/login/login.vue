@@ -36,7 +36,7 @@ const login = async () => {
     loading.value = true
     await store.dispatch('login', data)
     loading.value = false
-    router.push('/index')
+    router.push('/home')
   } else {
     ElMessage.error('请输入账号和密码')
   }

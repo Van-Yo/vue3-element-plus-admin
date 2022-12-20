@@ -1,6 +1,6 @@
 <template lang="">
   <div>
-    home
+    个人中心
   </div>
 </template>
 <script setup>
