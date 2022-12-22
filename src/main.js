@@ -10,6 +10,8 @@ import 'vue-cesium/dist/index.css'
 import './assets/style/normalize.css'
 import * as Icons from '@element-plus/icons-vue'
 
+import Pagination from '@/components/Pagination/index.vue' // 全局分页组件
+
 // import './assets/main.css'
 
 const app = createApp(App)
@@ -22,5 +24,5 @@ app.use(ElementPlus)
 Object.keys(Icons).forEach(key => {
   app.component(key, Icons[key])
 })
-
+app.component('Pagination', Pagination)
 app.mount('#app')
