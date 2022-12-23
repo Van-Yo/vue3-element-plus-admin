@@ -27,8 +27,8 @@ module.exports = {
     'vue/max-attributes-per-line': ['error', {
       singleline: { max: 5 },
       multiline: { max: 5 }
-    }] // vue template模板元素第一行最多5个属性
+    }], // vue template模板元素第一行最多5个属性
+    'vue/no-multiple-template-root': 'off' // 不强行要求在template下设置根div
     // 其它的规则可以去eslint查看，根据自己需要进行添加
-
   }
 }
