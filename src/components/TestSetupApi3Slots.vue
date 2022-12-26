@@ -8,10 +8,11 @@
 </template>
 
 <script setup>
-import { useSlots, onMounted } from 'vue'
+import { useSlots, onMounted, useAttrs } from 'vue'
 const slots = useSlots()
+const attrs = useAttrs()
 onMounted(() => {
-  console.log(slots.title())
+  console.log(attrs) // 除了props传的参数
 })
 </script>
 

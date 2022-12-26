@@ -1,5 +1,5 @@
 <template>
-  <TestSetupApi3Slots>
+  <TestSetupApi3Slots a="1" b="2" c="333" style="color:#fff">
     <template #title>
       标题1
     </template>
