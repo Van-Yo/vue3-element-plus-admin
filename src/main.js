@@ -3,6 +3,7 @@ import VueCesium from 'vue-cesium'
 import App from './App.vue'
 import createStore from './store/index'
 import router from './router/index.js'
+import './utils/permission.js'
 import ElementPlus from 'element-plus'
 
 import 'element-plus/dist/index.css'

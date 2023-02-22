@@ -36,6 +36,8 @@
 import { reactive, ref, onBeforeMount } from 'vue'
 import { useRouter, onBeforeRouteUpdate } from 'vue-router'
 import { removeToken } from '@/utils/user.js'
+import { useStore } from 'vuex'
+const store = useStore()
 const router = useRouter()
 // 在setup中
 const defaultRoute = ref('/home')
@@ -93,6 +95,8 @@ const handleSelect = (index, indexPath, item, routeResult) => {
 }
 const logout = () => {
   removeToken()
+  store.commit('setHasGetRoute', false)
+  store.commit('setRouteList', [])
   router.push('/login')
 }
 </script>

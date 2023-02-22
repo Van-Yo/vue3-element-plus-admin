@@ -8,7 +8,12 @@ export function loginOut (data) {
   return Post('/api/loginOut', data)
 }
 
+export function getRouteList (data) {
+  return Post('/api/getRouteList', data)
+}
+
 export const userApi = {
   login,
-  loginOut
+  loginOut,
+  getRouteList
 }

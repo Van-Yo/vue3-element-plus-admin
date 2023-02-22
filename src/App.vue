@@ -1,10 +1,10 @@
 <script setup>
-// import Test13 from './components/Test13.vue'
+// import TestSetupApi3 from '@/components/TestSetupApi3.vue'
 </script>
 
 <template>
-    <!-- <Test13></Test13> -->
-    <router-view></router-view>
+  <!-- <TestSetupApi3 /> -->
+  <router-view />
 </template>
 
 <style scoped>
