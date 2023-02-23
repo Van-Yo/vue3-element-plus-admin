@@ -37,6 +37,7 @@ import { reactive, ref, onBeforeMount } from 'vue'
 import { useRouter, onBeforeRouteUpdate } from 'vue-router'
 import { removeToken } from '@/utils/user.js'
 import { useStore } from 'vuex'
+import { ElMessage, ElMessageBox } from 'element-plus'
 const store = useStore()
 const router = useRouter()
 // 在setup中
@@ -94,10 +95,24 @@ const handleSelect = (index, indexPath, item, routeResult) => {
   router.push(index)
 }
 const logout = () => {
-  removeToken()
-  store.commit('setHasGetRoute', false)
-  store.commit('setRouteList', [])
-  router.push('/login')
+  ElMessageBox.confirm(
+    '您确定要注销账号吗?',
+    '提示',
+    {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning'
+    }
+  )
+    .then(() => {
+      removeToken()
+      store.commit('setHasGetRoute', false)
+      store.commit('setRouteList', [])
+      router.push('/login')
+    })
+    .catch(() => {
+
+    })
 }
 </script>
 <style lang="scss" scoped>

@@ -2,7 +2,7 @@
   <div class="login-area">
     <div class="login-box">
       <el-input v-model="user" placeholder="用户名" style="margin-bottom:10px" />
-      <el-input v-model="password" placeholder="密码" />
+      <el-input v-model="password" placeholder="密码" type="password" />
       <p @click="changeMode">{{ mode?'注册':'登录' }}</p>
       <el-button v-if="mode" type="primary" :loading="loading" @click="login">登录</el-button>
       <el-button v-else type="primary" @click="register">注册</el-button>
@@ -15,8 +15,8 @@ import { ElMessage } from 'element-plus'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 const router = useRouter()
-const user = ref('')
-const password = ref('')
+const user = ref('admin')
+const password = ref('123456')
 const mode = ref(true)
 const changeMode = () => {
   mode.value = !mode.value
