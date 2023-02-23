@@ -8,6 +8,12 @@
       <el-button v-else type="primary" @click="register">注册</el-button>
     </div>
   </div>
+  <div class="video_56wK2">
+    <!--850--><video
+      width="100%" src="https://search-operate.cdn.bcebos.com/23ef1fc7fbd5829ac08f5656a4bfc9ba.mp4" poster="https://search-operate.cdn.bcebos.com/cf23aa483c94da0335d7a42b2682f373.png" muted="true" autoplay="true"
+      auto-rotate="false" playsinline="true" x5-playsinline="true" webkit-playsinline="true" t7-video-player-type="inline"
+      crossorigin="anonymous" loop="true" />
+  </div>
 </template>
 <script setup>
 import { ref } from 'vue'
@@ -51,8 +57,10 @@ const loading = ref(false)
     display:flex;
     justify-content:center;
     align-items:center;
-    background:url('../../static/banner-default.jpg');
+    // background:url('../../static/banner-default.jpg');
     background-size:100% 100%;
+    z-index: 9999;
+    position: relative;
     .login-box{
         // width:500px;
         // height:400px;
@@ -62,5 +70,13 @@ const loading = ref(false)
         }
     }
 }
-
+.video_56wK2{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  video{
+    width: 100%;
+  }
+}
 </style>
