@@ -35,6 +35,12 @@ router.beforeEach((to, from, next) => {
             const element = store.state.routeList[i]
             router.addRoute('/', element)
           }
+          // 404页面
+          const noFound = {
+            path: '/:cathchAll(.*)',
+            redirect: '/404'
+          }
+          router.addRoute('/', noFound)
           // 这里也是一个坑，不能使用简单的 next()
           // 如果直接使用 next() 刷新后会一直白屏
           next({ ...to, replace: true })

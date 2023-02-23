@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path: '/',
-    name: 'layout',
+    name: '/',
     redirect: '/home',
     component: () => import(/* webpackChunkName:'layout' */ '@/pages/layout/index.vue'),
     children: [
@@ -20,14 +20,15 @@ const routes = [
         path: '/home',
         name: 'home',
         component: () => import(/* webpackChunkName:'home' */ '@/pages/index/index.vue')
-      },
-      {
-        path: '/person',
-        name: 'person',
-        component: () => import(/* webpackChunkName:'person' */ '@/pages/person/index.vue')
       }
     ]
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/pages/404.vue')
   }
+
 ]
 
 const router = createRouter({
