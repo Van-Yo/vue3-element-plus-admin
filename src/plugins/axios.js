@@ -36,9 +36,9 @@ export const Get = (url, params = {}, clearFn) =>
       .then((result) => {
         let res
         if (clearFn !== undefined) {
-          res = clearFn(result.data)
+          res = clearFn(result.data.data)
         } else {
-          res = result.data
+          res = result.data.data
         }
         resolve([null, res])
       })
@@ -52,7 +52,8 @@ export const Post = (url, data, params = {}) => {
     axios
       .post(url, data, { params })
       .then((result) => {
-        resolve([null, result.data])
+        console.log('233333', result)
+        resolve([null, result.data.data])
       })
       .catch((err) => {
         resolve([err, undefined])

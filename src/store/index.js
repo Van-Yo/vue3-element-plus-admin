@@ -32,7 +32,7 @@ export default createStore({
       return new Promise(async (resolve) => {
         const [e, r] = await api.login(data)
         if (!e && r) {
-          const token = r.data.token
+          const token = r.token
           store.commit('setToken', token)
           setToken(token)
           // ElMessage.success('登录成功')
@@ -50,7 +50,7 @@ export default createStore({
         if (!e && r) {
           console.log('11111111111111111111111111111111111111', r)
           // const routerList = filterAsyncRouter(JSON.parse(JSON.stringify(r.data.routerList)))
-          store.commit('setRouteList', r.data.routerList)
+          store.commit('setRouteList', r.routerList)
           store.commit('setHasGetRoute', true)
           // const token = r.data.token
           // store.commit('setToken', token)

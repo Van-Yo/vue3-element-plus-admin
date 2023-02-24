@@ -37,7 +37,7 @@ import { reactive, ref, onBeforeMount } from 'vue'
 import { useRouter, onBeforeRouteUpdate } from 'vue-router'
 import { removeToken } from '@/utils/user.js'
 import { useStore } from 'vuex'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessageBox } from 'element-plus'
 const store = useStore()
 const router = useRouter()
 // 在setup中
@@ -60,24 +60,14 @@ const barList = reactive([
   },
   {
     index: '2',
-    name: '商品列表',
+    name: '组件大全',
     path: '/products',
     icon: 'GoodsFilled',
     children: [
       {
         index: '2-1',
-        name: '热销产品',
-        path: '/hot',
-        icon: ''
-      }, {
-        index: '2-2',
-        name: '时令果蔬',
-        path: '/fruit',
-        icon: ''
-      }, {
-        index: '2-3',
-        name: '鲜杀肉蛋',
-        path: '/meat',
+        name: '分页',
+        path: '/pagination',
         icon: ''
       }
     ]
