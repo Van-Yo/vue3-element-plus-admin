@@ -1,4 +1,5 @@
 import axios from 'axios'
+import store from '@/store'
 
 import {
   handleChangeRequestHeader,
@@ -11,6 +12,14 @@ import {
 axios.interceptors.request.use((config) => {
   config = handleChangeRequestHeader(config)
   config = handleConfigureAuth(config)
+
+  // vuex记录cancelToken
+  config.cancelToken = new axios.CancelToken((cancel) => {
+    store.commit('pushToken', {
+      cancelToken: cancel
+    })
+  })
+
   return config
 })
 

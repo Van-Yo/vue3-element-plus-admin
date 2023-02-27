@@ -10,7 +10,7 @@ const LOGIN_PAGE_NAME = 'login'
 // 定义全局前置守卫（里面有两个坑要注意）
 router.beforeEach((to, from, next) => {
   NProgress.start()
-  //   console.log(to, from)
+  store.commit('clearToken')// 取消上一个页面中的请求
   // // 通过自定义方法获取用户 token 用来判断用户登录状态
   const token = getToken()
   if (!token && to.name !== LOGIN_PAGE_NAME) {

@@ -9,7 +9,8 @@ export default createStore({
   state: {
     token: '',
     hasGetRoute: false, // 是否加载了动态路由
-    routeList: [] // 动态路由列表
+    routeList: [], // 动态路由列表
+    cancelTokenArr: [] // 取消请求token数组
   },
 
   // 方法------调用数据库里的数据
@@ -23,6 +24,17 @@ export default createStore({
     },
     setRouteList (state, val) {
       state.routeList = filterAsyncRouter(JSON.parse(JSON.stringify(val)))
+    },
+    // 添加取消请求token
+    pushToken: (state, src) => {
+      state.cancelTokenArr.push(src.cancelToken)
+    },
+    // 调用并清空取消请求token
+    clearToken: (state) => {
+      state.cancelTokenArr.forEach(item => {
+        item('路由跳转取消请求')
+      })
+      state.cancelTokenArr = []
     }
   },
   // 异步调用
